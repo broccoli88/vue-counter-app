@@ -3,8 +3,8 @@
         <p class="counter__description">The current count is...</p>
         <span class="counter__count">{{ count }}</span>
         <div class="counter__btns">
-            <button class="btns__btn" @click="count++">+</button>
-            <button class="btns__btn" @click="count--">-</button>
+            <button class="btns__btn" @click="add">+</button>
+            <button class="btns__btn" @click="subtract">-</button>
         </div>
     </div>
 </template>
@@ -12,6 +12,14 @@
 import { ref } from "vue";
 
 const count = ref(0);
+
+const add = () => {
+    count.value++;
+};
+
+const subtract = () => {
+    count.value--;
+};
 </script>
 
 <style scoped>
